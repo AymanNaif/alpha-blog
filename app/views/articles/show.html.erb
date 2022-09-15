@@ -2,3 +2,16 @@
 
 <h2>title: <%= @article.title %></h2>
 <p>description: <%= @article.description %></p>
+
+
+<p>
+<%= link_to 'edit this Article', edit_article_path %>
+</p>
+
+<p>
+<%= link_to 'Create New Article', new_article_path %>
+</p>
+
+<p>
+<%= link_to 'Back to all Articles', articles_path %>
+</p>
