@@ -1,21 +1,18 @@
-<h1>Showing Selected Article</h1>
-
-<h2>title: <%= @article.title %></h2>
-<p>description: <%= @article.description %></p>
-<p>ID Of Article: <%= @article.id %></p>
-<% if @article.user %>
-    <p>ID Of User: <%= @article.user_id %></p>
-    <p>This Article Created By: <%= @article.user.username %></p>
-<% end %>
-
-<p>
-<%= link_to 'edit this Article', edit_article_path %>
-</p>
-
-<p>
-<%= link_to 'Create New Article', new_article_path %>
-</p>
-
-<p>
-<%= link_to 'Back to all Articles', articles_path %>
-</p>
+<h2 align="center">Title: <%= @article.title %></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+   <h4 class="center description"><strong>Description:</strong></h4>
+   <hr>
+   <%= simple_format(@article.description) %>
+   <div class="article-actions">
+      <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+      <%= link_to "Delete this article", article_path(@article), method: :delete,
+         data: { confirm: "Are you sure you want to delete the article?"},
+         
+         class: "btn btn-xs btn-danger" %>
+      <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
+   </div>
+   <% if @article.user %>
+   <p>ID Of User: <%= @article.user_id %></p>
+   <p>This Article Created By: <%= @article.user.username %></p>
+   <% end %>
+</div>
