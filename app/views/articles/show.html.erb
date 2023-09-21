@@ -1,0 +1,6 @@
+<h1>Articles Details</h1>
+<p><strong>Title: </strong><%= @article.title%></p>
+<p><strong>description: </strong><%= @article.description%></p>
+<%= link_to 'Edit the Article', edit_article_path(@article) %></br></br>
+<%= button_to 'Delete', article_path(@article), method: :delete %></br>
+<%= link_to 'Return to the articles', articles_path %>
