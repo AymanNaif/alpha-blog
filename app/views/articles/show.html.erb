@@ -1,4 +1,5 @@
 <h1>Articles Details</h1>
+<p><strong>created by: </strong><%= @article.user.username if @article.user%></p>
 <p><strong>Title: </strong><%= @article.title%></p>
 <p><strong>description: </strong><%= @article.description%></p>
 <%= link_to 'Edit the Article', edit_article_path(@article) %></br></br>
